@@ -13,24 +13,22 @@ var allCharacters = (lowercaseAlphabets, uppercaseAlphabets, specialCharacters, 
 
 var userInput = 0;
 
-
-var userChoiceLow = confirm("Would you like to use lowercase letters in your password? Select 'ok' or 'cancel' for no");
-
-function userChoiceLow() {
-  if (userChoiceLow == true) 
+  function generatePassword() {
+    
+    var userChoiceLow = confirm("Would you like to use lowercase letters in your password? Select 'ok' or 'cancel' for no");
+function lowerCaseCheck () {
+  if (userChoiceLow == true)
   {
-    alert("nice, lowercase letters it is")
-  
+    alert("let's do some lower case then!")
   }else{
-    alert("alright, no lowercase")
+    alert("cool, let's not")
   }
 }
-console.log('userChoiceLow', userChoiceLow);
+lowerCaseCheck();
 
 
 var userChoiceUpper = confirm("Would you like to use uppercase letters in your password? Select 'ok' or 'cancel' for no");
-
-function userChoiceUpper() {
+function upperCaseCheck() {
   if (userChoiceUpper == true) 
   {
     alert("nice, yay, uppercase!")
@@ -39,14 +37,14 @@ function userChoiceUpper() {
     alert("alright, no uppercase")
   }
 }
-console.log('userChoiceUpper', userChoiceUpper);
+upperCaseCheck();
 
 
 
 
   var userChoiceSpec = confirm("Would you like to use special characters in your password?");
-  console.log('userChoiceSpec', userChoiceSpec);
-  function userChoiceSpec() {
+  
+  function checkChoiceSpec() {
     if (userChoiceSpec == true) 
     {
       alert("nice, we love special characters!")
@@ -55,12 +53,11 @@ console.log('userChoiceUpper', userChoiceUpper);
       alert("alright, fine")
     }
   }
+  checkChoiceSpec();
 
   var userChoiceNum = confirm("Would you like to use numbers in your password?");
-  console.log('userChoiceNum', userChoiceNum);
-  var userChoiceLow = confirm("Would you like to use lowercase letters in your password? Select 'ok' or 'cancel' for no");
 
-function userChoiceNum() {
+ function checkChoiceNum() {
   if (userChoiceNum == true) 
   {
     alert("nice let's add some numbers")
@@ -69,18 +66,20 @@ function userChoiceNum() {
     alert("fine, no numbers")
   }
 }
-console.log('userChoiceNum', userChoiceNum);
+checkChoiceNum();
 
 var pwdLength =
 prompt("How many characters would you like it to be between 8 and 128 characters?");
-console.log(pwdLength)
-
+function checkPwdLength() {
   if (pwdLength >= 8 && pwdLength <=128) {
     alert("Thank you!");
-
-  }else {
+    
+  }else{
     alert("Invalid input, please enter a number between 8 and 128");
   }
+}
+checkPwdLength();
+
   var finalPassword = ""
   var combinedArray = []
   if (userChoiceSpec) {
@@ -100,63 +99,20 @@ console.log(pwdLength)
     var randomCharacter = combinedArray [Math.floor(Math.random()*combinedArray.length)]
     finalPassword += randomCharacter
   }
-console.log(finalPassword)
-
-  // var randomLowerCase = lowercaseAlphabets[randomInput]
-  // var randomInput = Math.floor(Math.random() * pwdLength.length);
-  // var randomLowerCase = lowercaseAlphabets[randomInput]
-  // console.log (randomLowerCase)
-  
-  
-  // var randomLet = Math.floor(Math.random() * lowercaseAlphabets.length);
-  // var randomLetter = lowercaseAlphabets[randomLet];
-  // console.log(randomLetter);
-  
-  // var randomUpper = Math.floor(Math.random() * uppercaseAlphabets.length);
-  // var randomUpperLetter = uppercaseAlphabets[randomUpper];
-  // console.log(randomUpperLetter);
-  
-  // var randomSym = Math.floor(Math.random() * specialCharacters.length);
-  // var randomSpeC = specialCharacters[randomSym];
-  // console.log(randomSpeC);
-  
-  // var randomNum = Math.floor(Math.random() * numbers.length);
-  // var randomNumber = numbers[randomNum];
-  // console.log(randomNumber);
-
-  function generatePassword() {
-    var password = ""
+return finalPassword
   }
   
-  
-  
-// var randomIdx = Math.floor(Math.random()*lowercaseAlphabets.length);
-// var userCHoice  = lowercaseAlphabets[randomIdx];
-
-// prompt for password login is a number
-// if statements if number is above 8 && below 128
-// confirm for lowercase, uppercase, numeric and special characters
-// store their response in a variable
-// if statement for each confirm and if it is a yes or true I would push or add random characters to a big array of all characters selected so far
-// for loop while i is less than their answer for num length prompt (so the for loop will run for each character)
-//in this for loop we would randomly pull characters from the big array
-//pull random characters from the array using math.random
-//have a variable declared above for loop
-//that var += theRandomChar
-//return the password var
-//not required to have all requirements in said password
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
   
-// }
+}
 
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
