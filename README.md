@@ -13,4 +13,8 @@ Generates a password that is completely randomized, increasing the user's securi
 <img width="950" alt="image" src="https://user-images.githubusercontent.com/127552050/228976492-849ac46f-75ec-4b82-bc3e-f0479523166f.png">
 
 ## Collaborations
-Special thanks to Alivia Thomas, Ashleigh Chute, Veronica Briggs, and Morgan Tolman
+Special thanks to 
+Alivia Thomas: https://github.com/17anguyen
+Ashleigh Chute: https://github.com/Ashlhc
+Veronica Briggs: https://github.com/DevManCryBB
+and Morgan Tolman (TA)
